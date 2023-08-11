@@ -3,7 +3,7 @@
 namespace Warshaen\LaravelWaitinglist;
 
 use Illuminate\Support\ServiceProvider;
-use Warshaen\LaravelWaitinglist\Models\WaitingList;
+use Warshaen\LaravelWaitinglist\models\WaitingList;
 
 class WaitingListServiceProvider extends ServiceProvider
 {
@@ -26,6 +26,9 @@ class WaitingListServiceProvider extends ServiceProvider
     {
         // Charger les routes, les vues, les migrations, etc.
         $this->loadMigrationsFrom(__DIR__."/database/migrations");
+        $this->publishes([
+            __DIR__.'/database/migrations' => database_path('migrations'),
+        ], 'waitinglist-migrations');
     }
 
     public static function ajouterEnFileDAttente($email) {
