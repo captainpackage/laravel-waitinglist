@@ -1,6 +1,6 @@
 <?php
 
-namespace WaitingList;
+namespace Warshaen\LaravelWaitinglist;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -24,13 +24,14 @@ class WaitingListServiceProvider extends ServiceProvider
     public function boot()
     {
         // Charger les routes, les vues, les migrations, etc.
+        $this->loadMigrationsFrom(__DIR__."/database/migrations");
     }
 
-    public function ajouterEnFileDAttente($email) {
+    public static function ajouterEnFileDAttente($email) {
         dump("Ajout dans la file : ".$email);
     }
 
-    public function passerEnCompteActif($email) {
+    public static function passerEnCompteActif($email) {
         dump("Retirer de la file et passer en compte actif : ".$email);
     }
 
