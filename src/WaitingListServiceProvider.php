@@ -3,6 +3,7 @@
 namespace Warshaen\LaravelWaitinglist;
 
 use Illuminate\Support\ServiceProvider;
+use Warshaen\LaravelWaitinglist\Models\WaitingList;
 
 class WaitingListServiceProvider extends ServiceProvider
 {
