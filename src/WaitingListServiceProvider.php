@@ -32,11 +32,78 @@ class WaitingListServiceProvider extends ServiceProvider
     }
 
     public static function ajouterEnFileDAttente($email) {
-        dump("Ajout dans la file : ".$email);
+
+        try {
+            //code...
+
+            $checkEmail = WaitingList::where('email', $email)->exists();
+
+            if($checkEmail){
+
+                $getEmail = WaitingList::where('email', $email)->first();
+
+                return "Vous êtes déjà inscrit dans la file d'attente. Votre position : #".$getEmail->position;
+
+            } else {
+
+                $countPosition = 0;
+                $countEmail = WaitingList::count();
+
+                if($countEmail === 0) {
+                    $countPosition++;
+                } else {
+
+                    $lastRecord = WaitingList::latest()->first(); 
+                    $getLastPosition = WaitingList::find($lastRecord->id);
+
+                    $countPosition = $getLastPosition->position + 1;
+                }
+        
+                $createFileAttente = WaitingList::create([
+                    'email' => $email,
+                    'position' => $countPosition,
+                    'status' => 0
+                ]);
+
+                return "Félicitations, vous êtes maintenant inscrit à la liste d'attente. Votre position : #".$countPosition;
+
+            }
+
+        } catch (\Throwable $th) {
+            //throw $th;
+            return $th;
+        }
+
     }
 
     public static function passerEnCompteActif($email) {
-        dump("Retirer de la file et passer en compte actif : ".$email);
+
+        try {
+            //code...
+
+            // Récupérer l'utilisateur en fonction de l'email
+            $utilisateur = WaitingList::where('email', $email)->first();
+
+            if ($utilisateur) {
+                // Décrémenter toutes les positions sauf la position 0
+                WaitingList::where('position', '>', 0)->decrement('position');
+
+                // Si la position de l'utilisateur est 1, le considérer comme compte actif
+                if ($utilisateur->position === 1) {
+                    $utilisateur->update([
+                        'position' => 0,
+                        'status' => 1
+                    ]);
+                }
+            }
+
+            return "L'adresse email ".$email." est maintenant considéré comme actif.";
+
+        } catch (\Throwable $th) {
+            //throw $th;
+            return $th;
+        }
+
     }
 
 }
