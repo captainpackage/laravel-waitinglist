@@ -1,0 +1,15 @@
+{
+    "name": "warshaen/laravel-waitinglist",
+    "autoload": {
+        "psr-4": {
+            "Warshaen\\LaravelWaitinglist\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Yuchiima",
+            "email": "134304602+Yuchiima@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
