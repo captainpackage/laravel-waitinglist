@@ -53,10 +53,9 @@ class WaitingListServiceProvider extends ServiceProvider
                     $countPosition++;
                 } else {
 
-                    $lastRecord = WaitingList::latest()->first(); 
-                    $getLastPosition = WaitingList::find($lastRecord->id);
-
-                    $countPosition = $getLastPosition->position + 1;
+                    $lastRecordHightPosition = WaitingList::orderBy('position', 'desc')->first();
+                    $countPosition = $lastRecordHightPosition->position + 1;
+                    
                 }
         
                 $createFileAttente = WaitingList::create([
