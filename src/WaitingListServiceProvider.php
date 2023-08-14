@@ -103,11 +103,6 @@ class WaitingListServiceProvider extends ServiceProvider
                     $newPosition++;
                 }
 
-                // Mettre à jour les positions avec la nouvelle séquence
-                WaitingList::where('position', 0)
-                ->where('status', 0)
-                ->update(['status' => 1]);
-
                 return "L'adresse email ".$email." est maintenant considéré comme actif.";
 
             } else {
