@@ -84,6 +84,15 @@ class WaitingListServiceProvider extends ServiceProvider
             $utilisateur = WaitingList::where('email', $email)->where('status', 0)->first();
 
             if ($utilisateur) {
+
+                // Réordonner les positions avant la mise à jour
+                WaitingList::where('position', '>', 0)
+                ->orderBy('position')
+                ->get()
+                ->each(function ($user, $index) {
+                    $user->update(['position' => $index + 1]);
+                });
+
                 // // Décrémenter toutes les positions sauf la position 0
                 WaitingList::where('position', '>', 0)->decrement('position');
 
@@ -92,11 +101,10 @@ class WaitingListServiceProvider extends ServiceProvider
                     'status' => 1
                 ]);
 
-                $getAllPositionZero = WaitingList::where('position', 0)
+                // Mettre à jour les positions avec la nouvelle séquence
+                WaitingList::where('position', 0)
                 ->where('status', 0)
-                ->update([
-                    'status' => 1
-                ]);
+                ->update(['status' => 1]);
 
                 return "L'adresse email ".$email." est maintenant considéré comme actif.";
 
