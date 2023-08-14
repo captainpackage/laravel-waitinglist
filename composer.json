@@ -19,5 +19,11 @@
         "psr-4": {
             "equativa\\LaravelWaitinglist\\": "src/"
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packagist.org"
+        }
+    ]
 }
