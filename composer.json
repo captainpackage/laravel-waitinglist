@@ -1,7 +1,7 @@
 {
     "name": "equativa/laravel-waitinglist",
     "description": "Ce package vous permet de gérer les files d'attente à l'inscription dans vos applications Laravel.",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "keywords": [
         "equativa",
         "laravel-waitinglist"
