@@ -113,4 +113,21 @@ class WaitingListServiceProvider extends ServiceProvider
 
     }
 
+    public static function getWaitingList() {
+
+        try {
+            //code...
+
+            $countWL = WaitingList::where('position', '>', 0)->where('status', 0)->count();
+
+            return $countWL;
+
+        } catch (\Throwable $th) {
+            //throw $th;
+            return $th;
+        }
+
+
+    }
+
 }
