@@ -1,15 +1,24 @@
 {
-    "name": "warshaen/laravel-waitinglist",
-    "autoload": {
-        "psr-4": {
-            "Warshaen\\LaravelWaitinglist\\": "src/"
-        }
-    },
+    "name": "equativa/laravel-waitinglist",
+    "description": "Ce package vous permet de gérer les files d'attente à l'inscription dans vos applications Laravel.",
+    "keywords": [
+        "equativa",
+        "laravel-waitinglist"
+    ],
+    "homepage": "https://github.com/equativa/laravel-waitinglist",
+    "license": "MIT",
     "authors": [
         {
-            "name": "Yuchiima",
-            "email": "134304602+Yuchiima@users.noreply.github.com"
+            "name": "Ludovic Leveneur",
+            "email": "ludovic.lvnr.freelance@gmail.com",
+            "homepage": "https://opensource.equativa.com",
+            "role": "Developer"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "equativa\\LaravelWaitinglist\\": "src/"
+        }
+    },
     "require": {}
 }
