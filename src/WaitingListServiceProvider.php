@@ -1,9 +1,9 @@
 <?php
 
-namespace Warshaen\LaravelWaitinglist;
+namespace equativa\LaravelWaitinglist;
 
 use Illuminate\Support\ServiceProvider;
-use Warshaen\LaravelWaitinglist\models\WaitingList;
+use equativa\LaravelWaitinglist\models\WaitingList;
 
 class WaitingListServiceProvider extends ServiceProvider
 {

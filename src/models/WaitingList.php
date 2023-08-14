@@ -1,6 +1,6 @@
 <?php 
 
-namespace Warshaen\LaravelWaitinglist\Models;
+namespace equativa\LaravelWaitinglist\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
