@@ -8,6 +8,15 @@ Vous pouvez installer le package via composer:
 composer require equativa/laravel-waitinglist
 ```
 
+Ajoutez la classe au provider dans "config/app.php" : 
+```php
+'providers' => ServiceProvider::defaultProviders()->merge([
+    /*
+        * Package Service Providers...
+        */
+    equativa\LaravelWaitinglist\WaitingListServiceProvider::class,
+```
+
 Vous pouvez publier et lancer les migrations avec : 
 
 ```bash
