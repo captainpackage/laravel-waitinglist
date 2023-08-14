@@ -85,21 +85,23 @@ class WaitingListServiceProvider extends ServiceProvider
 
             if ($utilisateur) {
 
-                // Réordonner les positions avant la mise à jour
-                WaitingList::where('position', '>', 0)
-                ->orderBy('position')
-                ->get()
-                ->each(function ($user, $index) {
-                    $user->update(['position' => $index + 1]);
-                });
-
-                // // Décrémenter toutes les positions sauf la position 0
-                WaitingList::where('position', '>', 0)->decrement('position');
-
                 $utilisateur->update([
                     'position' => 0,
                     'status' => 1
                 ]);
+
+                // Obtenir tous les utilisateurs avec des positions supérieures à 0
+                $usersToUpdate = WaitingList::where('position', '>', 0)
+                ->where('status', 0)
+                ->orderBy('position')
+                ->get();
+
+                // Réordonner les positions et mettre à jour les enregistrements
+                $newPosition = 1;
+                foreach ($usersToUpdate as $user) {
+                    $user->update(['position' => $newPosition]);
+                    $newPosition++;
+                }
 
                 // Mettre à jour les positions avec la nouvelle séquence
                 WaitingList::where('position', 0)
