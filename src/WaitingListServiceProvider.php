@@ -31,7 +31,7 @@ class WaitingListServiceProvider extends ServiceProvider
         ], 'waitinglist-migrations');
     }
 
-    public static function ajouterEnFileDAttente($email) {
+    public static function addEmailToQueue($email) {
 
         try {
             //code...
@@ -75,7 +75,7 @@ class WaitingListServiceProvider extends ServiceProvider
 
     }
 
-    public static function passerEnCompteActif($email) {
+    public static function activateAccount($email) {
 
         try {
             //code...
@@ -113,7 +113,7 @@ class WaitingListServiceProvider extends ServiceProvider
 
     }
 
-    public static function getWaitingList() {
+    public static function countWaitingQueue() {
         try {
             //code...
             $countWL = WaitingList::where('position', '>', 0)->where('status', 0)->count();
@@ -124,7 +124,7 @@ class WaitingListServiceProvider extends ServiceProvider
         }
     }
 
-    public static function getActifAccount() {
+    public static function countActiveAccounts() {
         try {
             //code...
             $countActifWL = WaitingList::where('position', 0)->where('status', 1)->count();
