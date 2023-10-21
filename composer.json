@@ -18,7 +18,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "equativa\\LaravelWaitinglist\\": "src/"
+            "captainpackage\\LaravelWaitinglist\\": "src/"
         }
     },
     "repositories": [
