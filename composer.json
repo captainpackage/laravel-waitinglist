@@ -1,18 +1,18 @@
 {
-    "name": "equativa/laravel-waitinglist",
+    "name": "captainpackage/laravel-waitinglist",
     "description": "Ce package vous permet de gérer les files d'attente à l'inscription dans vos applications Laravel.",
     "version": "1.0.2",
     "keywords": [
-        "equativa",
+        "captainpackage",
         "laravel-waitinglist"
     ],
-    "homepage": "https://github.com/equativa/laravel-waitinglist",
+    "homepage": "https://github.com/captainpackage/laravel-waitinglist",
     "license": "MIT",
     "authors": [
         {
             "name": "Ludovic Leveneur",
-            "email": "ludovic.lvnr.freelance@gmail.com",
-            "homepage": "https://opensource.equativa.com",
+            "email": "ludovic.lvnr@gmail.com",
+            "homepage": "https://captainpackage.com",
             "role": "Developer"
         }
     ],
