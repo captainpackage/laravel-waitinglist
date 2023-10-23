@@ -5,7 +5,7 @@ Si vous lancez une application qui nécessite une file d'attente pour son lancem
 Vous pouvez installer le package via composer:
 
 ```bash
-composer require equativa/laravel-waitinglist
+composer require captainpackage/laravel-waitinglist
 ```
 
 Ajoutez la classe au provider dans "config/app.php" : 
@@ -14,7 +14,7 @@ Ajoutez la classe au provider dans "config/app.php" :
     /*
         * Package Service Providers...
         */
-    equativa\LaravelWaitinglist\WaitingListServiceProvider::class,
+    captainpackage\LaravelWaitinglist\WaitingListServiceProvider::class,
 ```
 
 Vous pouvez publier et lancer les migrations avec : 
@@ -30,7 +30,7 @@ php artisan migrate
 Cette class contient l'ensemble des méthodes que vous pouvez utiliser pour la gestion de votre file d'attente.
 
 ```php 
-use equativa\LaravelWaitinglist\WaitingListServiceProvider;
+use captainpackage\LaravelWaitinglist\WaitingListServiceProvider;
 ```
 
 ### Etape 2 : Ajoutez une adresse email à la file d'attente
@@ -67,11 +67,11 @@ return $gActifAccount;
 
 ## Supportez nous !
 
-L'ensemble de nos projets open source sont portée par [Equativa](https://opensource.equativa.com). Vous pouvez nous supporter de plusieurs manières en participant à nos projets, en faisant un don, en créant un article ou tout autre forme de soutien sera fortement apprécier.
+L'ensemble de nos projets open source sont portée par [CaptainPackage](https://captainpackage.com). Vous pouvez nous supporter de plusieurs manières en participant à nos projets, en faisant un don, en créant un article ou tout autre forme de soutien sera fortement apprécier.
 
 ## Credits
 
-- [Ludovic LEVENEUR (Yuchima)](https://github.com/llvnr)
+- [Ludovic LEVENEUR (LVN)](https://github.com/llvnr)
 
 ## License
 
