@@ -17,6 +17,9 @@
         }
     ],
     "autoload": {
+        "classmap": [
+            "tests/models"
+        ],
         "psr-4": {
             "captainpackage\\LaravelWaitinglist\\": "src/"
         }
@@ -26,5 +29,12 @@
             "type": "composer",
             "url": "https://packagist.org"
         }
-    ]
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^10.4",
+        "orchestra/testbench": "^8.14"
+    },
+    "scripts": {
+        "test": "phpunit"
+    }
 }
