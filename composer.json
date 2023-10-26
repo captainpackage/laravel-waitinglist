@@ -1,7 +1,7 @@
 {
     "name": "captainpackage/laravel-waitinglist",
     "description": "Ce package vous permet de gérer les files d'attente à l'inscription dans vos applications Laravel.",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "keywords": [
         "captainpackage",
         "laravel-waitinglist"
